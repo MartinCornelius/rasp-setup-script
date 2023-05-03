@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/bash
+echo 'Installing need packages...'
 sudo apt-get update
 sudo apt-get install lightdm -y
 sudo apt-get install --no-install-recommends xserver-xorg x11-xserver-utils xinit openbox -y
@@ -6,6 +7,7 @@ sudo apt-get install --no-install-recommends chromium-browser -y
 sudo apt-get install plymouth plymouth-themes -y
 sudo apt-get install pix-plym-splash -y
 
+echo 'Changing some things...'
 sudo printf "xset s off\nxset s noblank\nxset -dpms\nchromium-browser --disable-infobars --kiosk '%s'" $1 > /etc/xdg/openbox/autostart
 sudo printf "[[ -z \$DISPLAY && \$XDG_VTNR -eq 1 ]] && startx -- -nocursor" > .bash_profile
 sudo mv splash.png /usr/share/plymouth/themes/pix
@@ -58,3 +60,5 @@ fun message_callback (text) {
 }
 
 Plymouth.SetUpdateStatusFunction(message_callback);" | sudo tee /usr/share/plymouth/themes/pix/pix.script
+
+echo 'Done. Go edit raspi-config...'
