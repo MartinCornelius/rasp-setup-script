@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 sudo apt-get update
 sudo apt-get install lightdm -y
 sudo apt-get install --no-install-recommends xserver-xorg x11-xserver-utils xinit openbox -y
