@@ -61,6 +61,6 @@ sudo apt-get install --no-install-recommends chromium-browser -y
 
 sudo printf "xset s off\nxset s noblank\nxset -dpms\nsetxkbmap -option terminate:ctrl_alt_bksp\nsed -i 's/\"exited_cleanly\":false/\"exited_cleanly\":true/' ~/.config/chromium/'Local State'\nsed -i 's/\"exited_cleanly\":false/\"exited_cleanly\":true/; s/\"exit_type\":\"\[^\"\]\\+\"/\"exit_type\":\"Normal\"/' ~/.config/chromium/Default/Preferences\nchromium-browser --disable-infobars --kiosk '%s'" $1 > /etc/xdg/openbox/autostart
 
-sudo apt-get install unclutter
+sudo apt-get install unclutter -y
 
 echo 'Done. Go edit raspi-config...'
