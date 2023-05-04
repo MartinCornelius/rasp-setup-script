@@ -1,6 +1,7 @@
 #!/bin/bash
 echo 'Starting setup process'
 sudo apt-get update
+sudo apt-get upgrade -y
 sudo apt-get install lightdm -y
 sudo apt-get install plymouth plymouth-themes -y
 sudo apt-get install pix-plym-splash -y
