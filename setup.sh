@@ -9,6 +9,7 @@ echo 'Starting setup process'
 sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt-get install lightdm -y
+sudo raspi-config
 sudo apt-get install plymouth plymouth-themes -y
 sudo apt-get install pix-plym-splash -y
 
@@ -61,7 +62,7 @@ fun message_callback (text) {
 
 Plymouth.SetUpdateStatusFunction(message_callback);" | sudo tee /usr/share/plymouth/themes/pix/pix.script
 
-echo " quiet splash plymouth.ignore-serial-consoles logo.nologo vt.global_cursor_default=0 splash-delay=5" | sudo tee -a /boot/cmdline.txt
+echo " quiet splash plymouth.ignore-serial-consoles logo.nologo vt.global_cursor_default=0" | sudo tee -a /boot/cmdline.txt
 
 sudo apt-get install --no-install-recommends xserver-xorg x11-xserver-utils xinit openbox -y
 sudo apt-get install --no-install-recommends chromium-browser -y
@@ -70,4 +71,4 @@ sudo printf "xset s off\nxset s noblank\nxset -dpms\nsetxkbmap -option terminate
 
 sudo apt-get install unclutter -y
 
-echo 'Done. Go edit raspi-config...'
+echo 'Done.'
