@@ -24,6 +24,6 @@ sudo apt-get install --no-install-recommends chromium-browser -y
 
 sudo printf "xset s off\nxset s noblank\nxset -dpms\nsetxkbmap -option terminate:ctrl_alt_bksp\nchromium-browser --disable-infobars --kiosk '%s'" $2 | sudo tee /etc/xdg/openbox/autostart
 
-sudo printf "[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && startx -- -nocursor" | sudo tee .bash_profile
+sudo printf "[[ -z \$DISPLAY && \$XDG_VTNR -eq 1 ]] && startx -- -nocursor" | sudo tee .bash_profile
 
 echo 'Done. Go edit the raspi-config!'
