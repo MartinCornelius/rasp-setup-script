@@ -26,6 +26,4 @@ sudo printf "xset s off\nxset s noblank\nxset -dpms\nsetxkbmap -option terminate
 
 sudo printf "[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && startx -- -nocursor" | sudo tee .bash_profile
 
-sudo raspi-config
-
-echo 'Done.'
+echo 'Done. Go edit the raspi-config!'
